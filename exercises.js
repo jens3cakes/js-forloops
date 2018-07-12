@@ -1,3 +1,8 @@
+console.log("Hello World!");
+
+console.log("hi");
+
+
 /* 1) Ticket Generator
 Write a for-loop that will iterate through 20 numbers (starting at 1 and ending at 20) and console.log the following message:
 "Now serving 1."
@@ -5,10 +10,18 @@ Write a for-loop that will iterate through 20 numbers (starting at 1 and ending 
 "Now serving 3."
 .
 .
-.
 "Now serving 20."
 */
-
+var ticketNum = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+console.log(ticketNum);
+function serving(num) {
+  for (var i = 0; i < ticketNum.length;i++) {
+    //console.log(i);
+    console.log("#1 " + "Now serving " + ticketNum[i])
+    
+  }
+}
+serving(ticketNum);
 
 /* 2) Pop Charts
 Write a for-loop that will iterate through the topFive array below and console.log the following message:
@@ -18,10 +31,13 @@ This week's chart buster is: 'I Feel It Coming.'
 This week's chart buster is: 'Let Me Love You.'
 This week's chart buster is: '24K Magic.'
 */
-
 var topFive = ["Closer", "Starboy", "I Feel It Coming", "Let Me Love You", "24K Magic"];
-
-
+function popCharts(arr){
+  for (var i = 0; i < topFive.length; i++){
+    console.log ("#2 " + "This week's chart buster is: " + topFive[i]);
+  }
+}
+popCharts();
 /* 3) Dead Presidents
 Declare a variable named `presidents` and assign it to an array containing the following Presidents: Washington, Adams, Jefferson, Madison and Monroe.
  
@@ -41,20 +57,35 @@ This function will iterate through the person parameter and console.log the foll
 
 "President person was a great leader."
 */
+deadPres = ["Washington", "Adams", "Jefferson", "Madison", "Monroe"];
+console.log(deadPres);
+function leaders(person) {
+  for (var i = 0; i < deadPres.length; i++)
+  console.log(deadPres[i] + " was a great leader.");
+};
+"#3 " + leaders();
+
 
 
 /* 4) Line Number
 Declare a variable named `stringOfNumbers` and assign its value to an empty string. 
 
 Write a for-loop that concatenates a Number value into that string on each iteration, starting at `10` and continuing up to and including `20`. Console.log your result. It should read "1011121314151617181920"*/
-
-
+var stringOfNumbers = "";
+ 
+ function conNum() {
+   for (var i = 0; i < 21; i++) {
+     console.log(stringOfNumbers.push(10))
+   }
+ }
+ conNum();
 /* 5) Even Stevens
 Declare a variable named `evenNumArr` and assign its value to an empty array. 
 
 Write a for-loop that will push even numbers to the `evenNumArr` array. We want to push 50 even even numbers starting from 0.
 Console.log your results.
 */
+
 
 
 /* 6) Up the Odds
@@ -145,8 +176,8 @@ Write a function that will loop through the multi-dimensional array and console.
 Note, please use two for loops to complete this problem
 
   @param Datatype: Array
-  */
-
+  
+*/
 var guide = [["Honolulu", "Waikiki"], ["Tokyo", "Tsukiji Fish Market"], ["Cairo", "Pyramids"],["Rome", "Colosseum"]];
 
 
