@@ -12,17 +12,13 @@ Write a for-loop that will iterate through 20 numbers (starting at 1 and ending 
 .
 "Now serving 20."
 */
-var ticketNum = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
-console.log(ticketNum);
-function serving(num) {
-  for (var i = 0; i < ticketNum.length;i++) {
-    //console.log(i);
-    console.log("#1 " + "Now serving " + ticketNum[i])
-    
-  }
-}
-serving(ticketNum);
+//var ticketNum = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+//console.log(ticketNum);
 
+  for (var i = 1; i < 21;i++) {
+    //console.log(i);
+    console.log("#1 " + "Now serving " + i) 
+  }
 /* 2) Pop Charts
 Write a for-loop that will iterate through the topFive array below and console.log the following message:
 This week's chart buster is: 'Closer.'
@@ -32,12 +28,10 @@ This week's chart buster is: 'Let Me Love You.'
 This week's chart buster is: '24K Magic.'
 */
 var topFive = ["Closer", "Starboy", "I Feel It Coming", "Let Me Love You", "24K Magic"];
-function popCharts(arr){
+
   for (var i = 0; i < topFive.length; i++){
     console.log ("#2 " + "This week's chart buster is: " + topFive[i]);
   }
-}
-popCharts();
 /* 3) Dead Presidents
 Declare a variable named `presidents` and assign it to an array containing the following Presidents: Washington, Adams, Jefferson, Madison and Monroe.
  
@@ -58,19 +52,17 @@ This function will iterate through the person parameter and console.log the foll
 "President person was a great leader."
 */
 
- var deadPres = ["Washington", "Adams", "Jefferson", "Madison", "Monroe"];
+ var presidents = ["Washington", "Adams", "Jefferson", "Madison", "Monroe"];
 
-for (var i = 0; i < deadPres.length; i++) {
-console.log("The value at " + i + " is " + deadPres[i]);
+for (var i = 0; i < presidents.length; i++) {
+console.log("The value at " + i + " is " + presidents[i]);
 }
+console.log(presidents.length);
 function leaders(person) {
   for (var i = 0; i < person.length; i++)
-  console.log(person[i] + " was a great leader.");
+  console.log("President " + person[i] + " was a great leader.");
 };
-"#3 " + leaders(deadPres);
-
-
-
+"#3 " + leaders(presidents);
 
 /* 4) Line Number
 Declare a variable named `stringOfNumbers` and assign its value to an empty string. 
@@ -96,6 +88,7 @@ for (var i = 0; i < 101; i++) {
 }
 }
 console.log(evenNumArr);
+console.log(evenNumArr.length)
 /* 6) Up the Odds
 Declare a variable named `oddSum` and assign it to the Number value 0.
 
@@ -141,7 +134,11 @@ down
 nope
 turn
 */
-console.log(oopsArray.reverse());
+for (var i = oopsArray.length - 1; i>0;i--){
+  console.log(oopsArray[i])
+}
+
+//console.log(oopsArray.reverse());
 
 
 /* 9) Siesta Time
@@ -163,7 +160,7 @@ function nap(schedule) {
       }
     }
   };
-console.log(nap(napSchedule));
+"#9 " + nap(napSchedule);
 
 
 /* 10) Copy Pasta
@@ -177,9 +174,16 @@ Write a function named `copyArray` which takes two arguments: `originArray` and 
 
 Inside of this function write a for-loop that will iterate through the contents of the `originArray` and pushes each element of that array into `destinationArray`. Console.log your result.
 */
-
-
-
+var valuesArray = [99, 66, 829, 1941, 8, 76];
+var copyValuesArray = [];
+function copyArray(originArray,destinationArray) {
+  for (var i = 0; i<originArray.length; i++) {
+    destinationArray.push(originArray[i])
+    return destinationArray;
+  }
+}
+console.log(copyArray(valuesArray,copyValuesArray));
+console.log(copyValuesArray);
 /*Final Boss*/
 
 /* 11) Go Long
@@ -199,7 +203,7 @@ for (var i = 0; i< strToArray.length; i++) {
 }
 
 
-console.log(longestWord(topQuote));
+console.log("#11 " + longestWord(topQuote));
 
 
 /* 12) Puppet Master
@@ -210,7 +214,18 @@ Write a function named `generateArrayOfStrings` which takes a single argument `s
    @return Datatype: Array
 
 */
+var miscStorage = [[], "carrots", 9, "beets", {}, {name: "Todd B."}, "mush"];
 
+function generateArrayOfStrings(storage) {
+  var strArray = [];
+  for (var i = 0; i < storage.length; i++) {
+   if (typeof storage[i]=== typeof "") {
+     strArray.push(storage[i]);
+   }
+  }
+  return strArray;
+}
+console.log(generateArrayOfStrings(miscStorage));
 
 
 /* 13) All Grown Up 
@@ -218,6 +233,18 @@ Write a function that will capitalize the first letter in each word in the phras
 */
 
 var myWay = "i've lived a life that's full, i've traveled each and every highway. but more, much more than this. i did it my way.";
+
+function firstLetterCap(str) {
+  var capitalize = str.split(" ");
+  for (var i = 0; i<capitalize.length; i++) {
+    var letter = capitalize[i].split("");
+    letter[0] = letter[0].toUpperCase();
+    capitalize[i] = letter.join('');
+
+  }
+return capitalize.join(" ");
+}
+console.log(firstLetterCap(myWay));
 
 
 
